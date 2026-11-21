@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="La lavagna di Lorenzo: studi, progetti e interessi.">
+    <title>Lorenzo’s Portfolio</title>
+    <link rel="preload" href="assets/ufficio-con-lavagna.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+    <script src="board.js" defer></script>
+  </head>
+  <body>
+    <main class="approach" id="approach">
+      <div class="viewport">
+        <div class="scene" id="scene">
+          <header class="board-title">
+            <h1><span>Lorenzo’s</span> <span>Portfolio</span></h1>
+          </header>
+
+          <section class="column about" aria-labelledby="about-title">
+            <h2 id="about-title"><button class="section-link" type="button" data-note="intro">About Me</button></h2>
+            <article class="note sticky" id="intro" tabindex="-1">
+              <h3>Ciao, sono Lorenzo!</h3>
+              <p>Una breve presentazione</p>
+            </article>
+            <article class="note graph">
+              <h3>Il mio percorso di studi</h3>
+            </article>
+          </section>
+
+          <section class="column projects" aria-labelledby="projects-title">
+            <h2 id="projects-title"><button class="section-link" type="button" data-note="projects-note">Projects &amp; Work</button></h2>
+            <article class="note graph" id="projects-note" tabindex="-1">
+              <h3>Progetti</h3>
+              <p>Lavori personali e di studio</p>
+            </article>
+            <article class="note sticky">
+              <h3>Esperienze di lavoro</h3>
+            </article>
+          </section>
+
+          <section class="column interests" aria-labelledby="interests-title">
+            <h2 id="interests-title"><button class="section-link" type="button" data-note="math">My Interests</button></h2>
+            <article class="note sticky" id="math" tabindex="-1">
+              <h3>Giochi matematici</h3>
+              <p>Enigmi e problemi da esplorare</p>
+            </article>
+          </section>
+        </div>
+        <button class="view-button" id="view-button" type="button">Avvicinati alla lavagna</button>
+      </div>
+    </main>
+  </body>
+</html>
