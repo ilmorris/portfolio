@@ -1,53 +1,185 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="La lavagna di Lorenzo: studi, progetti e interessi.">
+    <meta name="description" content="Meet Lorenzo through his studies, projects, and interests, pinned to a virtual whiteboard.">
     <title>Lorenzo’s Portfolio</title>
-    <link rel="preload" href="assets/ufficio-con-lavagna.png" as="image">
+    <link rel="preload" href="assets/ufficio-esteso.jpg" as="image" media="(width > 900px) and (not (pointer: coarse))">
     <link rel="stylesheet" href="styles.css">
     <script src="board.js" defer></script>
   </head>
   <body>
-    <main class="approach" id="approach">
+    <main class="approach">
       <div class="viewport">
         <div class="scene" id="scene">
-          <header class="board-title">
-            <h1><span>Lorenzo’s</span> <span>Portfolio</span></h1>
-          </header>
+          <div class="board" id="board">
+            <header class="board-title board-item" style="--x: 161; --y: 12">
+              <h1><span>Lorenzo’s</span> <span>Portfolio</span></h1>
+            </header>
 
-          <section class="column about" aria-labelledby="about-title">
-            <h2 id="about-title"><button class="section-link" type="button" data-note="intro">About Me</button></h2>
-            <article class="note sticky" id="intro" tabindex="-1">
-              <h3>Ciao, sono Lorenzo!</h3>
-              <p>Una breve presentazione</p>
-            </article>
-            <article class="note graph">
-              <h3>Il mio percorso di studi</h3>
-            </article>
-          </section>
+            <section class="about" aria-labelledby="about-title">
+              <img class="board-item board-arrow" src="assets/arrow-down.png" alt="" width="67" height="17" style="--x: 308; --y: 246; --angle: 45deg">
+              <img class="board-item board-arrow" src="assets/arrow-back.png" alt="" width="72" height="15" style="--x: 249; --y: 438; --angle: 165deg">
+              <h2 class="section-title board-item" id="about-title" style="--x: 37; --y: 126">
+                <button class="section-link" type="button"><span>About Me</span></button>
+              </h2>
+              <div class="board-pair board-item intro" data-stop tabindex="-1" role="group" aria-labelledby="intro-title" style="--x: 42; --y: 192">
+                <article class="paper note sticky tape-wide" style="--width: 143px; --angle: -6deg">
+                  <h3 id="intro-title">Hi, I’m Lorenzo!</h3>
+                  <p>I’m a computer engineer interested in machine learning, game development, and mathematics.</p>
+                </article>
+                <figure class="paper polaroid tape-vertical tape-blue" style="--width: 94px; --angle: 7deg; --tape-left: 58%">
+                  <img class="polaroid-photo portrait-photo" src="assets/about-portrait.jpg" alt="Lorenzo smiling in a dark blazer and white shirt" width="600" height="683" decoding="async">
+                </figure>
+              </div>
+              <article class="paper note paper-plain board-item tape-blue tape-short" data-stop tabindex="-1" style="--x: 253; --y: 302; --width: 150px; --angle: -4deg; --tape-left: 37%">
+                <h3>High School</h3>
+                <p>I followed the science track at the Blaise Pascal Institute in Manerbio and graduated with a final score of 100/100. For my final project, I built a Unity application to illustrate the photoelectric effect.</p>
+              </article>
+              <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="bachelor-title" style="--x: 25; --y: 307">
+                <figure class="paper polaroid tape-wide" style="--width: 76px; --angle: -8deg">
+                  <img class="polaroid-photo" src="assets/about-graduation.webp" alt="Lorenzo holding his diploma at Politecnico di Milano" width="800" height="800" decoding="async">
+                  <figcaption>Graduation</figcaption>
+                </figure>
+                <article class="paper note graph tape-slanted" style="--width: 123px; --angle: 4deg">
+                  <h3 id="bachelor-title">Bachelor’s in Computer Engineering</h3>
+                  <p>I graduated from Politecnico di Milano with a final grade of 110/110 cum laude. My projects covered algorithms, software engineering, and digital logic.</p>
+                </article>
+              </div>
+              <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="honors-title" style="--x: 163; --y: 484">
+                <article class="paper note sticky rose tape-wide" style="--width: 145px; --angle: -3deg">
+                  <h3 id="honors-title">Honors Program</h3>
+                  <p>During my bachelor’s, I joined <em lang="it">Percorsi di eccellenza</em>, a program for high-achieving students. I kept my grades high, took extra courses, and gained industry experience over the summer. I completed the program and earned a scholarship.</p>
+                </article>
+                <figure class="paper polaroid tape-blue tape-short" style="--width: 84px; --angle: 8deg">
+                  <img class="polaroid-photo" src="assets/about-honors.webp" alt="Lorenzo wearing a laurel wreath and standing beside another person" width="800" height="800" decoding="async">
+                  <figcaption lang="it">Percorsi di eccellenza</figcaption>
+                </figure>
+              </div>
+              <article class="paper note graph board-item" data-stop tabindex="-1" style="--x: 24; --y: 511; --width: 128px; --angle: 5deg">
+                <h3>Master’s Studies</h3>
+                <p>I’m finishing my master’s at Politecnico di Milano, focusing on machine learning and AI. My thesis explores how combinatorial bandits can be applied to RANSAC.</p>
+              </article>
+            </section>
 
-          <section class="column projects" aria-labelledby="projects-title">
-            <h2 id="projects-title"><button class="section-link" type="button" data-note="projects-note">Projects &amp; Work</button></h2>
-            <article class="note graph" id="projects-note" tabindex="-1">
-              <h3>Progetti</h3>
-              <p>Lavori personali e di studio</p>
-            </article>
-            <article class="note sticky">
-              <h3>Esperienze di lavoro</h3>
-            </article>
-          </section>
+            <section class="projects" aria-labelledby="projects-title">
+              <h2 class="section-title board-item" id="projects-title" style="--x: 438; --y: 119">
+                <button class="section-link" type="button"><span>Work &amp; Projects</span></button>
+              </h2>
+              <section aria-labelledby="work-experience-title">
+                <h3 class="board-subtitle board-item" id="work-experience-title" style="--x: 426; --y: 172">Work Experience</h3>
+                <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="solvigo-title" style="--x: 426; --y: 205">
+                  <article class="paper note sticky tape-wide" style="--width: 146px; --angle: -4deg; z-index: 1">
+                    <h4 id="solvigo-title">Solvigo</h4>
+                    <p class="note-meta">AI Engineer · Since October 2025</p>
+                    <p>I work on machine learning and statistics at a Stockholm-based startup, across client consulting and in-house projects.</p>
+                  </article>
+                  <figure class="paper polaroid tape-vertical tape-blue" style="--width: 108px; --angle: 7deg; --photo-ratio: 1.5; --paper-left: -21px; --paper-top: 19px">
+                    <img class="polaroid-photo" src="assets/work-solvigo.jpg" alt="Group photo from a Solvigo gathering" width="1050" height="700" decoding="async">
+                    <figcaption>Solvigo after hours</figcaption>
+                  </figure>
+                </div>
+                <article class="paper note paper-plain board-item tape-short" data-stop tabindex="-1" style="--x: 704; --y: 201; --width: 113px; --angle: 4deg">
+                  <h4>Infor</h4>
+                  <p class="note-meta">Summers 2022 and 2023</p>
+                  <p>Through <em lang="it">Percorsi di eccellenza</em>, I built dashboards to monitor industrial machinery and developed my SQL skills.</p>
+                </article>
+              </section>
+              <section aria-labelledby="selected-projects-title">
+                <h3 class="board-subtitle board-item" id="selected-projects-title" style="--x: 429; --y: 334">Projects</h3>
+                <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="codex-title" style="--x: 423; --y: 370">
+                  <article class="paper note graph tape-blue tape-slanted" style="--width: 143px; --angle: -5deg">
+                    <h4 id="codex-title">Codex Naturalis</h4>
+                    <p class="note-meta">Course project · 2023</p>
+                    <p>For our software engineering course, my team adapted the board game in Java. I built a Unity-inspired engine for scenes, the game loop, and card movement.</p>
+                  </article>
+                  <figure class="paper polaroid tape-wide" style="--width: 79px; --angle: 8deg; --photo-ratio: 1.78">
+                    <img class="polaroid-photo" src="assets/work-codex-naturalis.jpg" alt="Cover artwork for the original Codex Naturalis board game" width="720" height="405" decoding="async">
+                    <figcaption>Board game cover</figcaption>
+                  </figure>
+                </div>
+                <div class="board-pair board-stack board-item" data-stop tabindex="-1" role="group" aria-labelledby="sine-title" style="--x: 665; --y: 350">
+                  <article class="paper note graph tape-wide" style="--width: 144px; --angle: 5deg">
+                    <h4 id="sine-title">Sine Module</h4>
+                    <p class="note-meta">Digital Logic · 2023</p>
+                    <p>I designed a hardware module to approximate sine for angles in degrees, using a lookup table and linear interpolation.</p>
+                  </article>
+                  <figure class="paper polaroid tape-blue tape-short" style="--width: 134px; --angle: -4deg; --photo-ratio: 2.7">
+                    <img class="polaroid-photo" src="assets/work-sine-module.png" alt="Sine module schematic showing the lookup table and linear approximation block" width="1232" height="456" decoding="async">
+                    <figcaption>Module architecture</figcaption>
+                  </figure>
+                </div>
+                <article class="paper note sticky rose board-item tape-vertical" data-stop tabindex="-1" style="--x: 432; --y: 523; --width: 128px; --angle: -5deg">
+                  <h4>Deep Learning</h4>
+                  <p>For two course challenges, my team built classifiers for time-series data and medical images.</p>
+                </article>
+                <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="games-title" style="--x: 574; --y: 549">
+                  <article class="paper note sticky tape-short" style="--width: 157px; --angle: -4deg">
+                    <h4 id="games-title">Games I’ve Made</h4>
+                    <p>I’ve built games in Unity and experimented with 3D prototypes and Blender. At 16, I made Becu Blocks, a 2048-inspired C# puzzle game I released on Google Play.</p>
+                  </article>
+                  <figure class="paper polaroid polaroid-narrow tape-vertical tape-blue" style="--width: 50px; --angle: 6deg; --photo-ratio: .5">
+                    <img class="polaroid-photo" src="assets/work-becu-blocks.png" alt="Becu Blocks gameplay showing the board of colored number tiles" width="256" height="512" decoding="async">
+                    <figcaption>Becu Blocks</figcaption>
+                  </figure>
+                </div>
+              </section>
+            </section>
 
-          <section class="column interests" aria-labelledby="interests-title">
-            <h2 id="interests-title"><button class="section-link" type="button" data-note="math">My Interests</button></h2>
-            <article class="note sticky" id="math" tabindex="-1">
-              <h3>Giochi matematici</h3>
-              <p>Enigmi e problemi da esplorare</p>
-            </article>
-          </section>
+            <section class="interests" aria-labelledby="interests-title">
+              <h2 class="section-title board-item" id="interests-title" style="--x: 840; --y: 131">
+                <button class="section-link" type="button"><span>My Interests</span></button>
+              </h2>
+              <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="math-title" style="--x: 839; --y: 190">
+                <article class="paper note graph tape-wide" style="--width: 174px; --angle: -6deg; --paper-top: 42px">
+                  <h3 id="math-title">Math Competitions</h3>
+                  <p>In high school, I competed in Kangourou, the Bocconi Math Games, <em lang="it">Disfida Matematica</em>, and the Mathematics and Physics Olympiads. I qualified for national finals several times.</p>
+                </article>
+                <figure class="paper polaroid tape-vertical tape-blue" style="--width: 142px; --angle: 8deg; --photo-ratio: 1.407">
+                  <div class="photo-window">
+                    <img class="polaroid-photo" src="assets/interests-bocconi.jpg" alt="Certificate of participation in the 2017 Italian final of the Bocconi Mathematical Games" width="1200" height="853" decoding="async">
+                  </div>
+                  <figcaption>Bocconi national final · 2017</figcaption>
+                </figure>
+              </div>
+              <article class="paper note sticky rose board-item tape-vertical" data-stop tabindex="-1" style="--x: 840; --y: 383; --width: 130px; --angle: -9deg">
+                <h3>Listening to Music</h3>
+                <p>Jeff Buckley is my favorite artist. I also listen to a lot of Michael Jackson, Hozier, and Bruno Mars.</p>
+              </article>
+              <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="guitar-title" style="--x: 988; --y: 344">
+                <figure class="paper polaroid tape-wide" style="--width: 88px; --angle: -10deg; --photo-ratio: .925">
+                  <img class="polaroid-photo" src="assets/interests-guitar.jpg" alt="Lorenzo playing acoustic guitar outdoors" width="832" height="900" decoding="async">
+                </figure>
+                <article class="paper note sticky tape-short" style="--width: 115px; --angle: 7deg; --paper-top: 35px">
+                  <h3 id="guitar-title">Guitar &amp; Singing</h3>
+                  <p>I’ve played guitar since I was 15. Learning to play and sing my favorite songs is my way of getting inside them.</p>
+                </article>
+              </div>
+              <div class="board-pair board-item" data-stop tabindex="-1" role="group" aria-labelledby="sports-title" style="--x: 837; --y: 497">
+                <article class="paper note sticky tape-slanted" style="--width: 139px; --angle: 7deg; --paper-top: 19px">
+                  <h3 id="sports-title">Sports</h3>
+                  <p>I’ve been snowboarding and skateboarding since I was a kid, and they’re still my favorite sports. These days, I train regularly at the gym and do calisthenics.</p>
+                </article>
+                <figure class="paper polaroid tape-blue tape-short" style="--width: 91px; --angle: -9deg; --photo-ratio: .747">
+                  <img class="polaroid-photo" src="assets/interests-snowboard.jpg" alt="Lorenzo carrying a snowboard in the mountains at sunset" width="672" height="900" decoding="async">
+                </figure>
+              </div>
+              <article class="paper note paper-plain board-item tape-blue tape-short" data-stop tabindex="-1" style="--x: 1100; --y: 545; --width: 117px; --angle: -8deg">
+                <h3>Other Interests</h3>
+                <p>I mostly read psychological thrillers and mysteries. I also like experimenting in the kitchen and playing video games.</p>
+              </article>
+            </section>
+          </div>
         </div>
-        <button class="view-button" id="view-button" type="button">Avvicinati alla lavagna</button>
+        <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+        <div class="view-controls">
+          <output class="view-progress" aria-live="polite"></output>
+          <button class="view-arrow" id="view-previous" type="button" aria-label="Previous section">←</button>
+          <button class="view-button" id="view-button" type="button" hidden>Back to the Room</button>
+          <button class="view-arrow" id="view-next" type="button" aria-label="Next section">→</button>
+        </div>
+        <output class="board-coordinates" id="board-coordinates" aria-hidden="true" hidden></output>
       </div>
     </main>
   </body>
